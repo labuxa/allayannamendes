@@ -16,6 +16,8 @@ def main():
     html = html.replace('__STYLES__', (SOURCE / 'styles.css').read_text())
     html = html.replace('__SCRIPT__', (SOURCE / 'site.js').read_text())
     values = {
+        '__FAVICON_16__': uri('assets/brand/favicon-16.png', 'image/png'),
+        '__FAVICON_32__': uri('assets/brand/favicon-32.png', 'image/png'),
         '__LOGO_DATA__': uri('assets/brand/logo-aprovada.webp', 'image/webp'),
         '__HERO_DATA__': uri('assets/images/arquitetura-editorial.webp', 'image/webp'),
         '__FONT_REGULAR__': uri('assets/fonts/newsreader.woff2', 'font/woff2'),
@@ -34,9 +36,10 @@ def main():
     subdir = dist / 'allayannamendes'
     subdir.mkdir(exist_ok=True)
     (subdir / 'index.html').write_text(html)
-    for name in ['robots.txt', 'sitemap.xml', '.nojekyll']:
-        if (ROOT / name).exists():
-            shutil.copyfile(ROOT / name, subdir / name)
+    for name in ('favicon.ico', 'apple-touch-icon.png', 'allayanna-mendes-compartilhamento.jpg',
+                 '404.html', 'robots.txt', 'sitemap.xml', '.nojekyll'):
+        for destination in (dist, subdir):
+            shutil.copyfile(ROOT / name, destination / name)
     preview = ROOT.parent / 'Allayanna_Mendes_Previa.html'
     shutil.copyfile(ROOT / 'index.html', preview)
     print(f'Built self-contained index.html: {(ROOT / "index.html").stat().st_size:,} bytes')

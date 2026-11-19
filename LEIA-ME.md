@@ -1,23 +1,32 @@
 # Allayanna Mendes — site revisado
 
-Versão 2026.11.19-r2 · 19 de novembro de 2026.
+Versão 2026.11.19-r3 · 19 de novembro de 2026.
 
 ## Atualizar o site que já está publicado
 
-O arquivo `index.html` da raiz deste pacote é o arquivo de publicação. Ele contém a logo aprovada, a imagem arquitetônica, as fontes, o visual e a navegação dentro do próprio HTML.
+O `index.html` contém a logo, a imagem arquitetônica, as fontes, a navegação e os ícones de aba de 16 e 32 px. Os arquivos na tabela completam a publicação.
 
-1. Extraia este ZIP.
-2. Substitua o `index.html` da raiz do repositório `labuxa/allayannamendes` pelo `index.html` deste pacote.
-3. Envie também `sitemap.xml`, `robots.txt` e `.nojekyll`, que estão na raiz.
-4. Aguarde a publicação do GitHub Pages e recarregue o endereço do site.
+1. Extraia o ZIP.
+2. Envie o conteúdo extraído para a raiz do repositório `labuxa/allayannamendes`, substituindo os arquivos de mesmo nome. O `index.html` e os arquivos na tabela ficam no mesmo nível.
+3. Aguarde a publicação do GitHub Pages e reabra o site para conferir o monograma na aba.
 
-A publicação da página principal funciona com o `index.html` sozinho. As pastas `assets` e `fontes` são fornecidas para futuras edições; o arquivo publicado não faz requisições para elas. Assim, a ausência dessas pastas na publicação não deixa as imagens ou fontes invisíveis.
+| Arquivo | Função |
+| --- | --- |
+| `favicon.ico` | Ícone AM em seis tamanhos para navegadores e favoritos. |
+| `apple-touch-icon.png` | Ícone AM para o atalho na tela inicial do iPhone. |
+| `allayanna-mendes-compartilhamento.jpg` | Imagem para a prévia do link em aplicativos que leem Open Graph. |
+| `404.html` | Página para endereços inválidos, com links para o início e o contato. |
 
-Endereço configurado: https://labuxa.github.io/allayannamendes/
+O endereço de publicação é [labuxa.github.io/allayannamendes](https://labuxa.github.io/allayannamendes/).
 
-Esta entrega contém os arquivos revisados. A conexão disponível nesta sessão não tem permissão de gravação nesse repositório, portanto a atualização remota ainda depende da substituição dos arquivos por uma conta autorizada.
+A publicação dos arquivos revisados depende de uma conta com permissão de gravação no repositório.
 
-## O que foi corrigido
+## O que foi revisado
+
+- Ícones de aba e de atalho derivados do monograma da logo aprovada.
+- Imagem de compartilhamento de 1200 × 630 px, com logo e fachada.
+- Página de endereço inválido com links para o início e o contato.
+- HTML de publicação reduzido de 4,10 MB para 0,97 MB com a otimização das imagens WebP.
 
 - Logo e imagem incorporadas ao arquivo final.
 - Enquadramento da logo definido a partir da arte aprovada, com nome e complemento visíveis.
@@ -48,8 +57,8 @@ Os detalhes adicionais da formação e os três artigos previstos poderão ser i
 
 A pasta `fontes` guarda o HTML de origem, CSS e JavaScript legíveis. Para reconstruir o arquivo final após editar esses arquivos, execute `python3 fontes/build.py` na pasta do projeto. O script usa apenas a biblioteca padrão do Python; as imagens otimizadas já estão incluídas.
 
-A pasta `assets` contém as artes originais, cópias WebP e fontes com as licenças OFL. A conversão das imagens para WebP foi realizada sem perda e conferida por igualdade dos pixels, sem redesenhar ou alterar a logo aprovada.
+A pasta `assets` contém as artes originais em PNG, as versões WebP otimizadas para exibição e as fontes com licenças OFL. Para reconstruir os ícones, a imagem de compartilhamento e os WebP a partir dos PNG originais, execute `python3 fontes/preparar_imagens.py` com Pillow instalado e depois execute o script de publicação.
 
-As fontes Newsreader e Manrope e os cuidados com publicação, navegação móvel e acesso por teclado do pacote `artelva-site.zip` foram usados como referência técnica. A identidade e o conteúdo da Allayanna foram preservados.
+As fontes e os cuidados com publicação, navegação móvel e acesso por teclado do pacote `artelva-site.zip` serviram como referência técnica. A revisão do pacote `Site_Minas_Sat_2026-07-19_SEO_Atualizado.zip` orientou os ícones em diferentes tamanhos e a página para endereços inválidos.
 
 Consulte `VERIFICACAO.md` para o escopo e os resultados dos testes.
