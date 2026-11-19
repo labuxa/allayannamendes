@@ -1,36 +1,55 @@
-# Allayanna Mendes — Site institucional
+# Allayanna Mendes — site revisado
 
-Primeira versão para revisão, em 19 de novembro de 2026.
+Versão 2026.11.19-r2 · 19 de novembro de 2026.
 
-O site usa HTML, CSS e JavaScript sem dependências de compilação. Para visualizar, abra `index.html` no navegador. Para publicação, envie o conteúdo desta pasta, mantendo a estrutura de `assets`.
+## Atualizar o site que já está publicado
 
-## Conteúdo
+O arquivo `index.html` da raiz deste pacote é o arquivo de publicação. Ele contém a logo aprovada, a imagem arquitetônica, as fontes, o visual e a navegação dentro do próprio HTML.
 
-- Identidade aprovada: Allayanna Mendes · Advogada, monograma AM, verde profundo, off-white e dourado discreto.
-- Regularização imobiliária, contencioso imobiliário e assessoria jurídica.
-- Apresentação profissional, atendimento, dúvidas frequentes e contato.
-- WhatsApp: +55 31 99509-0072.
-- E-mail: advallayannamendes@gmail.com.
-- Instagram: @adv.allayannamendes.
-- Inscrição profissional: OAB/MG 233.598.
+1. Extraia este ZIP.
+2. Substitua o `index.html` da raiz do repositório `labuxa/allayannamendes` pelo `index.html` deste pacote.
+3. Envie também `sitemap.xml`, `robots.txt` e `.nojekyll`, que estão na raiz.
+4. Aguarde a publicação do GitHub Pages e recarregue o endereço do site.
 
-Não há endereço, fotos pessoais, analytics, formulário de cadastro ou integração que envie mensagens automaticamente. A imagem arquitetônica é ilustrativa; não representa um escritório da profissional.
+A publicação da página principal funciona com o `index.html` sozinho. As pastas `assets` e `fontes` são fornecidas para futuras edições; o arquivo publicado não faz requisições para elas. Assim, a ausência dessas pastas na publicação não deixa as imagens ou fontes invisíveis.
 
-## Publicação no GitHub Pages
+Endereço configurado: https://labuxa.github.io/allayannamendes/
 
-O destino indicado para a publicação é a conta **labuxa**. Esta entrega contém os arquivos preparados para essa publicação; nenhum repositório remoto foi alterado nesta etapa.
+Esta entrega contém os arquivos revisados. A conexão disponível nesta sessão não tem permissão de gravação nesse repositório, portanto a atualização remota ainda depende da substituição dos arquivos por uma conta autorizada.
 
-Os links de arquivos usam caminhos relativos, compatíveis com GitHub Pages tanto na raiz quanto em um subdiretório de repositório. Não existe etapa de instalação ou build.
+## O que foi corrigido
 
-Antes da publicação definitiva:
+- Logo e imagem incorporadas ao arquivo final.
+- Enquadramento da logo definido a partir da arte aprovada, com nome e complemento visíveis.
+- Navegação calculada pela altura efetiva do cabeçalho, com respiro de 24 px no computador e 20 px no celular.
+- Destinos das abas posicionados no início do conteúdo de cada seção.
+- Menu móvel fecha após escolher uma seção e pela tecla Escape.
+- Links diretos para seções, recarregamento e histórico do navegador preservados.
+- Tipografia, contraste, espaçamentos, foco de teclado e áreas de toque revisados.
+- Telefone ajustado para permanecer em uma linha nas telas pequenas testadas.
+- Botão flutuante de WhatsApp ocultado quando o bloco de contato ou o rodapé está visível.
+- Informações de privacidade com abertura, fechamento e retorno de foco verificados.
+- Navegação e leitura básicas disponíveis também sem o script da aplicação.
+- Endereço canônico, metadados e dados estruturados preenchidos com o endereço conhecido.
 
-- Revisar o texto institucional e a lista de serviços.
-- Incorporar os detalhes da formação e os três artigos quando forem fornecidos.
-- Definir o domínio definitivo, se houver, e então preencher URL canônica, metadados absolutos e sitemap.
-- Ao adotar ferramentas de medição, formulários ou novas integrações, atualizar as informações de privacidade conforme a implementação efetiva.
+## Conteúdo e identidade
 
-## Arquivos e direitos
+Allayanna Mendes · Advogada · OAB/MG 233.598.
 
-A logo aprovada e a imagem arquitetônica foram preservadas nos arquivos originais. O enquadramento da logo no cabeçalho é feito por CSS, sem modificar o arquivo de imagem. As fontes Newsreader e Manrope estão incluídas com seus respectivos arquivos de licença OFL em `assets/fonts`.
+WhatsApp: (31) 99509-0072.
+E-mail: advallayannamendes@gmail.com.
+Instagram: @adv.allayannamendes.
 
-O arquivo separado `Allayanna_Mendes_Previa.html` reúne imagens e fontes dentro de um único HTML para facilitar a revisão offline. O conteúdo visual é o mesmo do `index.html`.
+Mantidos: verde profundo, off-white e dourado discreto; atendimento nacional e personalizado; regularização imobiliária, contencioso e assessoria jurídica. A imagem arquitetônica é ilustrativa e não identifica o escritório da profissional. Não foram inseridos endereço, fotos pessoais, formação não confirmada, depoimentos ou artigos inventados.
+
+Os detalhes adicionais da formação e os três artigos previstos poderão ser incluídos quando fornecidos. As ferramentas de medição e o cadastro no Search Console não estão configurados nesta entrega. O sitemap deve ser submetido à conta responsável após a publicação.
+
+## Arquivos de edição
+
+A pasta `fontes` guarda o HTML de origem, CSS e JavaScript legíveis. Para reconstruir o arquivo final após editar esses arquivos, execute `python3 fontes/build.py` na pasta do projeto. O script usa apenas a biblioteca padrão do Python; as imagens otimizadas já estão incluídas.
+
+A pasta `assets` contém as artes originais, cópias WebP e fontes com as licenças OFL. A conversão das imagens para WebP foi realizada sem perda e conferida por igualdade dos pixels, sem redesenhar ou alterar a logo aprovada.
+
+As fontes Newsreader e Manrope e os cuidados com publicação, navegação móvel e acesso por teclado do pacote `artelva-site.zip` foram usados como referência técnica. A identidade e o conteúdo da Allayanna foram preservados.
+
+Consulte `VERIFICACAO.md` para o escopo e os resultados dos testes.
