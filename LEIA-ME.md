@@ -1,14 +1,14 @@
-# Allayanna Mendes — site revisado
+# Allayanna Mendes · Site institucional
 
-Versão 2026.11.19-r3 · 19 de novembro de 2026.
+Versão 2026.11.20-r5 · 20 de novembro de 2026.
 
 ## Atualizar o site que já está publicado
 
-O `index.html` contém a logo, a imagem arquitetônica, as fontes, a navegação e os ícones de aba de 16 e 32 px. Os arquivos na tabela completam a publicação.
+O `index.html` contém a logo, a imagem de abertura, o retrato, as fontes, a navegação e os ícones de aba de 16 e 32 px. Os arquivos na tabela completam a publicação.
 
 1. Extraia o ZIP.
-2. Envie o conteúdo extraído para a raiz do repositório `labuxa/allayannamendes`, substituindo os arquivos de mesmo nome. O `index.html` e os arquivos na tabela ficam no mesmo nível.
-3. Aguarde a publicação do GitHub Pages e reabra o site para conferir o monograma na aba.
+2. Envie o conteúdo extraído para a raiz da branch `main` do repositório `labuxa/allayannamendes`, substituindo os arquivos de mesmo nome. O `index.html` e os arquivos da tabela ficam no mesmo nível.
+3. Confirme o envio em **Commit changes**. Após a atualização do GitHub Pages, abra **Negócios imobiliários** em **Áreas de atuação** para conferir o item **Due diligence imobiliária**. Em **A advogada**, confira o retrato e o link para o LinkedIn.
 
 | Arquivo | Função |
 | --- | --- |
@@ -23,12 +23,17 @@ A publicação dos arquivos revisados depende de uma conta com permissão de gra
 
 ## O que foi revisado
 
+- Abertura com revisão de contrato imobiliário, frase de apresentação atualizada e três novos destaques.
+- Áreas de atuação organizadas em quatro frentes, com due diligence, locações e assessoria jurídica para condomínios em destaque.
+- Descrição de contratos imobiliários no mesmo formato dos demais serviços.
+- Apresentação profissional mais concisa, com o retrato enviado e link para o LinkedIn.
+- Seção de atendimento com os três blocos solicitados e o texto de prevenção patrimonial revisado.
+- Seção **Artigos e publicações**, com a matéria do portal Portas e o crédito da reportagem.
+- Introdução, resumos e segunda coluna dos serviços alinhados no computador, com disposição em uma coluna no celular.
 - Ícones de aba e de atalho derivados do monograma da logo aprovada.
-- Imagem de compartilhamento de 1200 × 630 px, com logo e fachada.
+- Imagem de compartilhamento de 1200 × 630 px, com logo e a nova imagem de abertura.
 - Página de endereço inválido com links para o início e o contato.
-- HTML de publicação reduzido de 4,10 MB para 0,97 MB com a otimização das imagens WebP.
-
-- Logo e imagem incorporadas ao arquivo final.
+- Logo, imagem de abertura e retrato incorporados ao arquivo final.
 - Enquadramento da logo definido a partir da arte aprovada, com nome e complemento visíveis.
 - Navegação calculada pela altura efetiva do cabeçalho, com respiro de 24 px no computador e 20 px no celular.
 - Destinos das abas posicionados no início do conteúdo de cada seção.
@@ -49,13 +54,15 @@ WhatsApp: (31) 99509-0072.
 E-mail: advallayannamendes@gmail.com.
 Instagram: @adv.allayannamendes.
 
-Mantidos: verde profundo, off-white e dourado discreto; atendimento nacional e personalizado; regularização imobiliária, contencioso e assessoria jurídica. A imagem arquitetônica é ilustrativa e não identifica o escritório da profissional. Não foram inseridos endereço, fotos pessoais, formação não confirmada, depoimentos ou artigos inventados.
+A identidade visual usa verde profundo, off-white e dourado discreto. A imagem de abertura ilustra a revisão de um contrato imobiliário.
 
-Os detalhes adicionais da formação e os três artigos previstos poderão ser incluídos quando fornecidos. As ferramentas de medição e o cadastro no Search Console não estão configurados nesta entrega. O sitemap deve ser submetido à conta responsável após a publicação.
+## Google e tráfego pago
+
+O pacote inclui o `sitemap.xml`, o endereço canônico e a descrição da página. Após a publicação, a etapa de Google começa pela verificação do endereço no Search Console. A configuração da medição de contatos e das campanhas faz parte da próxima etapa.
 
 ## Arquivos de edição
 
-A pasta `fontes` guarda o HTML de origem, CSS e JavaScript legíveis. Para reconstruir o arquivo final após editar esses arquivos, execute `python3 fontes/build.py` na pasta do projeto. O script usa apenas a biblioteca padrão do Python; as imagens otimizadas já estão incluídas.
+A pasta `fontes` guarda o HTML de origem, CSS e JavaScript legíveis. Para reconstruir o arquivo final após editar esses arquivos, execute `python3 fontes/build.py` na pasta do projeto. O script usa a biblioteca padrão do Python e as imagens otimizadas incluídas no pacote.
 
 A pasta `assets` contém as artes originais em PNG, as versões WebP otimizadas para exibição e as fontes com licenças OFL. Para reconstruir os ícones, a imagem de compartilhamento e os WebP a partir dos PNG originais, execute `python3 fontes/preparar_imagens.py` com Pillow instalado e depois execute o script de publicação.
 

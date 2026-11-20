@@ -1,4 +1,4 @@
-"""Gera os arquivos de exibição a partir das duas imagens PNG aprovadas."""
+"""Gera os arquivos de exibição a partir das imagens PNG originais."""
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFilter, ImageOps
@@ -36,8 +36,8 @@ def save_icons(logo):
     layers[-1].save(ROOT / "favicon.ico", sizes=[im.size for im in layers], append_images=layers[:-1])
 
 
-def save_share_image(logo, facade):
-    card = ImageOps.fit(facade, (1200, 630), method=LANCZOS, centering=(0.55, 0.48))
+def save_share_image(logo, backdrop):
+    card = ImageOps.fit(backdrop, (1200, 630), method=LANCZOS, centering=(0.55, 0.38))
     plaque = logo.crop((95, 128, 1441, 907)).resize((636, 368), LANCZOS)
     ImageDraw.Draw(plaque).rectangle((9, 9, 626, 358), outline=(165, 129, 68), width=1)
     card.paste(plaque, ((card.width - plaque.width) // 2, (card.height - plaque.height) // 2))
@@ -45,11 +45,14 @@ def save_share_image(logo, facade):
 
 
 def main():
-    with Image.open(BRAND / "logo-aprovada.png") as logo, Image.open(IMAGES / "arquitetura-editorial.png") as facade:
+    with Image.open(BRAND / "logo-aprovada.png") as logo:
         logo.resize((960, 640), LANCZOS).save(BRAND / "logo-aprovada.webp", quality=97, method=6)
-        facade.save(IMAGES / "arquitetura-editorial.webp", quality=89, method=6)
         save_icons(logo)
-        save_share_image(logo, facade)
+        with Image.open(IMAGES / "contrato-imobiliario-editorial.png") as backdrop:
+            backdrop.save(IMAGES / "contrato-imobiliario-editorial.webp", quality=89, method=6)
+            save_share_image(logo, backdrop)
+    with Image.open(IMAGES / "allayanna-mendes.png") as portrait:
+        portrait.save(IMAGES / "allayanna-mendes.webp", quality=91, method=6)
 
 
 if __name__ == "__main__":

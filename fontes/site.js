@@ -54,7 +54,7 @@
   function setCurrentLink() {
     const threshold = headerHeight() + 50;
     let current = '';
-    for (const id of ['atuacao', 'sobre', 'atendimento', 'contato']) {
+    for (const id of ['atuacao', 'sobre', 'atendimento', 'publicacoes', 'contato']) {
       const target = document.getElementById(id);
       if (target.getBoundingClientRect().top <= threshold) current = '#' + id;
     }
@@ -117,7 +117,8 @@
     if (!target) return false;
     setMenu(false);
     updateHeader();
-    if (target.tagName === 'DETAILS') target.open = true;
+    const disclosure = target.closest('details');
+    if (disclosure) disclosure.open = true;
     const gap = parseFloat(getComputedStyle(root).getPropertyValue('--anchor-gap')) || 24;
     const top = ['#inicio', '#conteudo'].includes(hash) ? 0 :
       Math.max(0, Math.round(target.getBoundingClientRect().top + window.scrollY - headerHeight() - gap));
