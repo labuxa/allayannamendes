@@ -37,10 +37,14 @@ def save_icons(logo):
 
 
 def save_share_image(logo, backdrop):
-    card = ImageOps.fit(backdrop, (1200, 630), method=LANCZOS, centering=(0.55, 0.38))
-    plaque = logo.crop((95, 128, 1441, 907)).resize((636, 368), LANCZOS)
-    ImageDraw.Draw(plaque).rectangle((9, 9, 626, 358), outline=(165, 129, 68), width=1)
-    card.paste(plaque, ((card.width - plaque.width) // 2, (card.height - plaque.height) // 2))
+    card = Image.new("RGB", (1200, 630), (250, 247, 242))
+    logo_column = 462
+    scene = ImageOps.fit(backdrop, (card.width - logo_column, card.height),
+                         method=LANCZOS, centering=(0.5, 1.0))
+    card.paste(scene, (logo_column, 0))
+    plaque = logo.crop((95, 128, 1441, 907)).resize((420, 243), LANCZOS)
+    ImageDraw.Draw(plaque).rectangle((6, 6, 413, 236), outline=(165, 129, 68), width=1)
+    card.paste(plaque, ((logo_column - plaque.width) // 2, (card.height - plaque.height) // 2))
     card.save(ROOT / "allayanna-mendes-compartilhamento.jpg", quality=88, optimize=True, progressive=True)
 
 
@@ -48,8 +52,8 @@ def main():
     with Image.open(BRAND / "logo-aprovada.png") as logo:
         logo.resize((960, 640), LANCZOS).save(BRAND / "logo-aprovada.webp", quality=97, method=6)
         save_icons(logo)
-        with Image.open(IMAGES / "contrato-imobiliario-editorial.png") as backdrop:
-            backdrop.save(IMAGES / "contrato-imobiliario-editorial.webp", quality=89, method=6)
+        with Image.open(IMAGES / "assinatura-contrato-imovel.png") as backdrop:
+            backdrop.save(IMAGES / "assinatura-contrato-imovel.webp", quality=89, method=6)
             save_share_image(logo, backdrop)
     with Image.open(IMAGES / "allayanna-mendes.png") as portrait:
         portrait.save(IMAGES / "allayanna-mendes.webp", quality=91, method=6)

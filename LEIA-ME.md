@@ -1,6 +1,6 @@
 # Allayanna Mendes · Site institucional
 
-Versão 2026.11.20-r5 · 20 de novembro de 2026.
+Versão 2026.11.20-r6 · 20 de novembro de 2026.
 
 ## Atualizar o site que já está publicado
 
@@ -8,7 +8,7 @@ O `index.html` contém a logo, a imagem de abertura, o retrato, as fontes, a nav
 
 1. Extraia o ZIP.
 2. Envie o conteúdo extraído para a raiz da branch `main` do repositório `labuxa/allayannamendes`, substituindo os arquivos de mesmo nome. O `index.html` e os arquivos da tabela ficam no mesmo nível.
-3. Confirme o envio em **Commit changes**. Após a atualização do GitHub Pages, abra **Negócios imobiliários** em **Áreas de atuação** para conferir o item **Due diligence imobiliária**. Em **A advogada**, confira o retrato e o link para o LinkedIn.
+3. Confirme o envio em **Commit changes**. Após a atualização do GitHub Pages, confira a cena de assinatura na abertura e a frase **Entender seu caso. Antecipar riscos. Agir com estratégia.** em **Atendimento**.
 
 | Arquivo | Função |
 | --- | --- |
@@ -23,11 +23,11 @@ A publicação dos arquivos revisados depende de uma conta com permissão de gra
 
 ## O que foi revisado
 
-- Abertura com revisão de contrato imobiliário, frase de apresentação atualizada e três novos destaques.
+- Abertura com assinatura de contrato em frente ao imóvel e parágrafo de apresentação justificado.
 - Áreas de atuação organizadas em quatro frentes, com due diligence, locações e assessoria jurídica para condomínios em destaque.
 - Descrição de contratos imobiliários no mesmo formato dos demais serviços.
 - Apresentação profissional mais concisa, com o retrato enviado e link para o LinkedIn.
-- Seção de atendimento com os três blocos solicitados e o texto de prevenção patrimonial revisado.
+- Nova frase de abertura de **Atendimento** e parágrafos justificados nos três blocos.
 - Seção **Artigos e publicações**, com a matéria do portal Portas e o crédito da reportagem.
 - Introdução, resumos e segunda coluna dos serviços alinhados no computador, com disposição em uma coluna no celular.
 - Ícones de aba e de atalho derivados do monograma da logo aprovada.
@@ -54,7 +54,7 @@ WhatsApp: (31) 99509-0072.
 E-mail: advallayannamendes@gmail.com.
 Instagram: @adv.allayannamendes.
 
-A identidade visual usa verde profundo, off-white e dourado discreto. A imagem de abertura ilustra a revisão de um contrato imobiliário.
+A identidade visual usa verde profundo, off-white e dourado discreto. A imagem de abertura ilustra a assinatura de um contrato imobiliário diante da fachada de referência.
 
 ## Google e tráfego pago
 

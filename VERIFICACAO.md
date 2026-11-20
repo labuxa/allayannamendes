@@ -1,21 +1,21 @@
 # Verificação da versão revisada
 
-Allayanna Mendes · Versão 2026.11.20-r5 · 20/11/2026.
+Allayanna Mendes · Versão 2026.11.20-r6 · 20/11/2026.
 
 ## Conferência da revisão final
 
 | Item | Resultado |
 | --- | --- |
-| Página inicial | Imagem de revisão de contrato visível acima da legenda no computador e em 320 px. Frase de apresentação e três destaques conferidos. |
+| Página inicial | Cena de assinatura em frente à fachada de referência. O documento e o gesto de assinar ficam visíveis acima da legenda no computador e em 320 px. O parágrafo de assessoria está justificado. |
 | Áreas de atuação | Introdução, resumos e segunda coluna dos serviços começam no mesmo eixo nas larguras de computador conferidas. A justificação se aplica à introdução e aos parágrafos corridos do perfil acima de 1.100 px. |
 | Serviços | Due diligence vem antes de compra e venda. A descrição de contratos está em parágrafo. Locações, assessoria para condomínios e o contencioso foram conferidos. |
 | Perfil profissional | Nome, OAB/MG 233.598, apresentação revisada, retrato na proporção original e endereço do LinkedIn conferidos. No celular, a foto vem entre a identificação e a biografia. |
-| Atendimento | Três blocos de “Segurança jurídica em cada decisão” conferidos, com a redação atualizada de “Prevenção e proteção”. |
+| Atendimento | Frase “Entender seu caso. Antecipar riscos. Agir com estratégia.” e os três parágrafos justificados conferidos no computador e no celular. |
 | Publicações | Matéria do portal Portas, crédito de Cristina Moreno de Castro e endereço externo conferidos no HTML final. |
 | Navegação | Cinco destinos testados no computador e em 390 px. O foco chegou às seções, com cerca de 24 px de respiro no computador e 20 px no celular. O menu móvel fechou após cada seleção. |
-| Telas menores | Ausência de rolagem horizontal nas larguras de 320, 390, 650, 768, 860, 1.024, 1.101 e 1.366 px. Due diligence, locações e condomínios abertos em 320 px. |
+| Telas menores | Ausência de rolagem horizontal nas larguras de 320, 390, 650, 768, 860, 1.024, 1.101 e 1.366 px. Quatro parágrafos justificados e imagem acima da legenda nas larguras conferidas. |
 | Links diretos | O endereço com `#due-diligence` abre “Negócios imobiliários” e leva ao serviço. A página de erro aponta para o início e o contato na subpasta de publicação. |
-| Privacidade e contato | Janela fecha com Escape e devolve o foco. O botão flutuante do WhatsApp fica oculto na seção de contato. |
+| Privacidade e contato | Janela fecha com Escape e devolve o foco ao botão de abertura. |
 | Pacote | HTML de publicação e prévia idênticos. Logo, fontes, retrato e imagem de abertura incorporados ao HTML. |
 
 ## Diagnóstico da publicação anterior

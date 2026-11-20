@@ -19,7 +19,7 @@ def main():
         '__FAVICON_16__': uri('assets/brand/favicon-16.png', 'image/png'),
         '__FAVICON_32__': uri('assets/brand/favicon-32.png', 'image/png'),
         '__LOGO_DATA__': uri('assets/brand/logo-aprovada.webp', 'image/webp'),
-        '__HERO_DATA__': uri('assets/images/contrato-imobiliario-editorial.webp', 'image/webp'),
+        '__HERO_DATA__': uri('assets/images/assinatura-contrato-imovel.webp', 'image/webp'),
         '__PORTRAIT_DATA__': uri('assets/images/allayanna-mendes.webp', 'image/webp'),
         '__FONT_REGULAR__': uri('assets/fonts/newsreader.woff2', 'font/woff2'),
         '__FONT_ITALIC__': uri('assets/fonts/newsreader-italic.woff2', 'font/woff2'),
