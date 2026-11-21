@@ -15,6 +15,7 @@
   let scrollFrame;
   let navigationFrame = null;
   let userNavigated = false;
+  let privacyTrigger = privacyOpen;
 
   root.classList.add('js');
   root.dataset.scrolling = 'false';
@@ -169,16 +170,20 @@
   window.addEventListener('load', alignInitialHash, {once: true});
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(alignInitialHash);
 
-  privacyOpen.addEventListener('click', () => {
-    setMenu(false);
-    if (typeof privacy.showModal === 'function') privacy.showModal();
-    else privacy.setAttribute('open', '');
-    syncFloatContact();
-  });
+  for (const button of [privacyOpen, document.getElementById('ads-privacy-open')]) {
+    button.addEventListener('click', () => {
+      privacyTrigger = button;
+      setMenu(false);
+      if (typeof privacy.showModal === 'function') privacy.showModal();
+      else privacy.setAttribute('open', '');
+      syncFloatContact();
+    });
+  }
   function closePrivacy() {
     if (typeof privacy.close === 'function') privacy.close();
     else privacy.removeAttribute('open');
-    privacyOpen.focus({preventScroll: true});
+    const returnFocus = privacyTrigger.closest('[hidden]') ? privacyOpen : privacyTrigger;
+    returnFocus.focus({preventScroll: true});
     syncFloatContact();
   }
   document.getElementById('privacy-close').addEventListener('click', closePrivacy);
@@ -204,4 +209,78 @@
   window.addEventListener('resize', syncFloatContact, {passive: true});
   syncFloatContact();
   setCurrentLink();
+
+  const adsConversion = 'AW-18588583541/xceECLjP9rwdEPWM3Z9F';
+  const adsTagId = adsConversion.split('/')[0];
+  const adsConsentKey = 'allayanna-ads-consent';
+  const adsConsentPanel = document.getElementById('ads-consent');
+  const adsConsentStatus = document.getElementById('ads-consent-status');
+  const adsConsentDenied = {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied',
+  };
+  let adsConsent = null;
+
+  function startAdsMeasurement() {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function gtag() { window.dataLayer.push(arguments); };
+    window.gtag('consent', 'default', adsConsentDenied);
+    window.gtag('consent', 'update', {...adsConsentDenied, ad_storage: 'granted', ad_user_data: 'granted'});
+    window.gtag('js', new Date());
+    window.gtag('config', adsTagId, {allow_ad_personalization_signals: false, send_page_view: false});
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + adsTagId;
+    document.head.append(script);
+  }
+
+  function applyAdsConsent(choice) {
+    const wasAllowed = adsConsent === 'granted';
+    adsConsent = choice === 'granted' || choice === 'denied' ? choice : null;
+    adsConsentPanel.hidden = adsConsent !== null;
+    adsConsentStatus.textContent = {
+      granted: 'Medição autorizada neste navegador.',
+      denied: 'Medição desativada neste navegador.',
+    }[adsConsent] || 'Escolha se deseja autorizar a medição.';
+
+    if (!wasAllowed && adsConsent === 'granted') startAdsMeasurement();
+    if (wasAllowed && adsConsent !== 'granted') {
+      window.gtag('consent', 'update', adsConsentDenied);
+      for (const cookie of document.cookie.split(';')) {
+        const name = cookie.trim().split('=', 1)[0];
+        if (!name.startsWith('_gcl_')) continue;
+        const expired = name + '=; Max-Age=0; Path=/';
+        document.cookie = expired;
+        document.cookie = expired + '; Domain=' + window.location.hostname;
+      }
+      // Reload to remove the tag that was authorized on this page.
+      window.location.reload();
+    }
+  }
+
+  function readAdsConsent() {
+    try { return window.localStorage.getItem(adsConsentKey); }
+    catch { return null; }
+  }
+  for (const button of document.querySelectorAll('[data-ads-consent]')) {
+    button.addEventListener('click', () => {
+      const choice = button.dataset.adsConsent;
+      try { window.localStorage.setItem(adsConsentKey, choice); }
+      catch { /* The choice still applies on the current page. */ }
+      applyAdsConsent(choice);
+    });
+  }
+  window.addEventListener('storage', event => {
+    if (event.key === adsConsentKey || event.key === null) applyAdsConsent(readAdsConsent());
+  });
+  document.addEventListener('click', event => {
+    if (adsConsent !== 'granted' || event.defaultPrevented || !(event.target instanceof Element)) return;
+    if (event.target.closest('a[href^="https://wa.me/"]')) {
+      window.gtag('event', 'conversion', {send_to: adsConversion});
+    }
+  });
+  applyAdsConsent(readAdsConsent());
 })();

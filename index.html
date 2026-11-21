@@ -11,7 +11,7 @@
   <meta property="og:title" content="Allayanna Mendes | Advogada em Direito Imobiliário">
   <meta property="og:description" content="Estruturação de empreendimentos, contratos, locações, assessoria para condomínios e contencioso imobiliário estratégico. Atendimento em todo o Brasil.">
   <meta name="color-scheme" content="light">
-  <meta name="site-version" content="2026.11.21-r7">
+  <meta name="site-version" content="2026.11.21-r8">
   <meta property="og:site_name" content="Allayanna Mendes · Advogada">
   <meta property="og:url" content="https://allayannamendes.com.br/">
   <meta property="og:image" content="https://allayannamendes.com.br/allayanna-mendes-compartilhamento.jpg">
@@ -283,6 +283,38 @@ dialog a { overflow-wrap: anywhere; }
 .privacy-content { max-width: 550px; }
 .privacy-fallback { width: min(var(--page), calc(100% - 40px)); margin: 30px auto 0; }
 .privacy-fallback p { color: var(--muted); }
+.ads-consent {
+  position: fixed;
+  z-index: 25;
+  left: max(22px, env(safe-area-inset-left));
+  bottom: max(22px, env(safe-area-inset-bottom));
+  width: min(410px, calc(100% - 44px));
+  max-height: 65dvh;
+  overflow-y: auto;
+  padding: 14px 20px 20px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  box-shadow: 0 6px 26px #102e2424;
+}
+.ads-consent-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.ads-consent-heading .privacy-button { flex-shrink: 0; }
+.ads-consent h2, .ads-preferences h3 { font-size: 1.45rem; line-height: 1.2; }
+.ads-consent p { margin: 2px 0 12px; color: var(--muted); font-size: .875rem; line-height: 1.55; }
+.ads-choices { display: flex; flex-wrap: wrap; gap: 8px; }
+.ads-choice {
+  flex: 1 1 auto;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--muted);
+  color: var(--ink);
+  background: transparent;
+  font-size: .875rem;
+  font-weight: 600;
+}
+.ads-choice:hover { background: var(--soft); }
+.ads-preferences { margin-block: 20px; padding-block: 16px; border-block: 1px solid var(--line); }
+.ads-preferences h3 { margin-bottom: 8px; }
+.ads-preferences .ads-consent-status { margin: 10px 0; font-size: .875rem; }
 @media (min-width: 1101px) {
   .section-intro p, .about-content > p:not(.about-lead) {
     text-align: justify;
@@ -422,6 +454,7 @@ dialog a { overflow-wrap: anywhere; }
   .footer-tagline { max-width: 320px; font-size: 1.35rem; text-align: left; }
   .footer-bottom { align-items: start; flex-direction: column; gap: 6px; }
   .float-contact { right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); min-height: 48px; padding: 10px 15px; font-size: .8125rem; }
+  .ads-consent { left: max(12px, env(safe-area-inset-left)); right: max(12px, env(safe-area-inset-right)); bottom: calc(max(16px, env(safe-area-inset-bottom)) + 58px); width: auto; padding: 10px 14px 14px; }
   dialog { max-height: calc(100dvh - 32px); padding: 23px; }
   .dialog-top { gap: 12px; }
   dialog h2 { font-size: 1.85rem; }
@@ -434,7 +467,7 @@ dialog a { overflow-wrap: anywhere; }
 }
 @media print {
   .site-header { position: static; }
-  .menu-toggle, .navigation, .float-contact, .hero-actions, .privacy-button { display: none !important; }
+  .menu-toggle, .navigation, .float-contact, .hero-actions, .privacy-button, .ads-consent { display: none !important; }
   .wrap { width: 100%; }
   body { font-size: 11pt; background: white; }
   .hero, .practice-section, .about-section, .process-section, .publications-section, .faq-section, .contact-section { padding-block: 24px; }
@@ -683,9 +716,38 @@ dialog a { overflow-wrap: anywhere; }
     </div></div></section>
     <section class="contact-section" aria-labelledby="contact-title"><div class="wrap contact-grid section-anchor" id="contato" tabindex="-1"><div><p class="eyebrow">Contato</p><h2 class="contact-title" id="contact-title">Atendimento jurídico,<br>com atenção ao <em>seu contexto.</em></h2><p class="contact-copy">Para conversar sobre seu imóvel, negócio ou demanda jurídica, entre em contato pelos canais abaixo.</p><p class="contact-copy">Atendimento personalizado, em todo o Brasil.</p></div><div class="contact-channels"><div class="contact-main"><div class="contact-main-head"><svg width="22" height="22" aria-hidden="true"><use href="#icon-whatsapp"/></svg>WhatsApp</div><a class="contact-phone" href="https://wa.me/5531995090072" target="_blank" rel="noopener noreferrer">(31) 99509-0072</a><a class="button" href="https://wa.me/5531995090072?text=Ol%C3%A1%2C%20Allayanna.%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20atendimento%20jur%C3%ADdico." target="_blank" rel="noopener noreferrer">Iniciar conversa no WhatsApp</a></div><div class="contact-other"><a class="contact-channel" href="mailto:advallayannamendes@gmail.com"><svg width="24" height="24" aria-hidden="true"><use href="#icon-mail"/></svg><span><span class="label">E-mail</span><span class="value">advallayannamendes@gmail.com</span></span></a><a class="contact-channel" href="https://www.instagram.com/adv.allayannamendes/" target="_blank" rel="noopener noreferrer"><svg width="24" height="24" aria-hidden="true"><use href="#icon-instagram"/></svg><span><span class="label">Instagram</span><span class="value">@adv.allayannamendes</span></span></a></div><p class="contact-availability">O primeiro contato é feito diretamente com Allayanna Mendes.</p></div></div></section>
   </main>
-  <footer class="site-footer"><div class="wrap"><div class="footer-top"><div><p class="footer-name">Allayanna Mendes</p><p class="footer-sub">Advogada · OAB/MG 233.598</p></div><p class="footer-tagline">Estratégia jurídica para negócios e patrimônio.</p></div><div class="footer-bottom"><p>© <span id="copyright-year">2026</span> Allayanna Mendes. Todos os direitos reservados.</p><button class="privacy-button" type="button" id="privacy-open" hidden>Privacidade e contato</button></div></div><noscript><details class="privacy-fallback"><summary>Privacidade e contato</summary><p>Este site apresenta informações institucionais sobre a atuação de Allayanna Mendes, OAB/MG 233.598. Não há formulário de cadastro nem envio de documentos pelo site.</p><p>Ao acessar WhatsApp, e-mail ou Instagram, você será direcionado a serviços de terceiros, sujeitos às respectivas políticas de privacidade. Compartilhe informações e documentos pessoais apenas nos canais de atendimento apropriados.</p><p>As informações encaminhadas no atendimento são utilizadas para compreender a solicitação e, quando houver contratação, conduzir o trabalho jurídico.</p><p>Esta versão não utiliza ferramentas de análise de tráfego nem cookies publicitários. O serviço de hospedagem poderá processar registros técnicos necessários ao funcionamento do site.</p><p>Para questões relacionadas às informações compartilhadas no atendimento, escreva para <a href="mailto:advallayannamendes@gmail.com">advallayannamendes@gmail.com</a>.</p></details></noscript></footer>
+  <footer class="site-footer"><div class="wrap"><div class="footer-top"><div><p class="footer-name">Allayanna Mendes</p><p class="footer-sub">Advogada · OAB/MG 233.598</p></div><p class="footer-tagline">Estratégia jurídica para negócios e patrimônio.</p></div><div class="footer-bottom"><p>© <span id="copyright-year">2026</span> Allayanna Mendes. Todos os direitos reservados.</p><button class="privacy-button" type="button" id="privacy-open" hidden>Privacidade e cookies</button></div></div><noscript><details class="privacy-fallback"><summary>Privacidade e contato</summary><p>Este site apresenta informações institucionais sobre a atuação de Allayanna Mendes, OAB/MG 233.598. Não há formulário de cadastro nem envio de documentos pelo site.</p><p>Ao acessar WhatsApp, e-mail ou Instagram, você será direcionado a serviços de terceiros, sujeitos às respectivas políticas de privacidade. Compartilhe informações e documentos pessoais apenas nos canais de atendimento apropriados.</p><p>As informações encaminhadas no atendimento são utilizadas para compreender a solicitação e, quando houver contratação, conduzir o trabalho jurídico.</p><p>Com o JavaScript desativado, a medição de anúncios fica inativa. O serviço de hospedagem poderá processar registros técnicos necessários ao funcionamento do site.</p><p>Para questões relacionadas às informações compartilhadas no atendimento, escreva para <a href="mailto:advallayannamendes@gmail.com">advallayannamendes@gmail.com</a>.</p></details></noscript></footer>
   <a class="float-contact" href="https://wa.me/5531995090072?text=Ol%C3%A1%2C%20Allayanna.%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20atendimento%20jur%C3%ADdico." target="_blank" rel="noopener noreferrer" aria-label="Contato pelo WhatsApp com Allayanna Mendes"><svg width="21" height="21" aria-hidden="true"><use href="#icon-whatsapp"/></svg><span>WhatsApp</span></a>
-  <dialog id="privacy-dialog" aria-labelledby="privacy-title"><div class="dialog-top"><h2 id="privacy-title">Privacidade e contato</h2><button type="button" class="dialog-close" id="privacy-close" aria-label="Fechar informações de privacidade"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19" stroke="currentColor" stroke-width="1.4"/></svg></button></div><div class="privacy-content"><p>Este site apresenta informações institucionais sobre a atuação de Allayanna Mendes, OAB/MG 233.598. Não há formulário de cadastro nem envio de documentos pelo site.</p><p>Ao acessar WhatsApp, e-mail ou Instagram, você será direcionado a serviços de terceiros, sujeitos às respectivas políticas de privacidade. Compartilhe informações e documentos pessoais apenas nos canais de atendimento apropriados.</p><p>As informações encaminhadas no atendimento são utilizadas para compreender a solicitação e, quando houver contratação, conduzir o trabalho jurídico.</p><p>Esta versão não utiliza ferramentas de análise de tráfego nem cookies publicitários. O serviço de hospedagem poderá processar registros técnicos necessários ao funcionamento do site.</p><p>Para questões relacionadas às informações compartilhadas no atendimento, escreva para <a href="mailto:advallayannamendes@gmail.com">advallayannamendes@gmail.com</a>.</p></div></dialog>
+  <aside class="ads-consent" id="ads-consent" aria-labelledby="ads-consent-title" hidden>
+    <div class="ads-consent-heading">
+      <h2 id="ads-consent-title">Cookies de medição</h2>
+      <button type="button" class="privacy-button" id="ads-privacy-open">Privacidade</button>
+    </div>
+    <p>Com sua autorização, o Google Ads usa cookies para medir cliques no WhatsApp e associá-los aos anúncios.</p>
+    <div class="ads-choices">
+      <button class="ads-choice" type="button" data-ads-consent="denied">Recusar</button>
+      <button class="ads-choice" type="button" data-ads-consent="granted">Permitir</button>
+    </div>
+  </aside>
+  <dialog id="privacy-dialog" aria-labelledby="privacy-title">
+    <div class="dialog-top"><h2 id="privacy-title">Privacidade e cookies</h2><button type="button" class="dialog-close" id="privacy-close" aria-label="Fechar informações de privacidade"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19" stroke="currentColor" stroke-width="1.4"/></svg></button></div>
+    <div class="privacy-content">
+      <p>Este site apresenta informações institucionais sobre a atuação de Allayanna Mendes, OAB/MG 233.598. Não há formulário de cadastro nem envio de documentos pelo site.</p>
+      <section class="ads-preferences" aria-labelledby="ads-preferences-title">
+        <h3 id="ads-preferences-title">Medição de anúncios</h3>
+        <p>Com sua autorização, a tag do Google Ads pode usar cookies e identificadores de anúncios para associar cliques nos botões de WhatsApp a interações com anúncios. A sua escolha fica salva neste navegador e pode ser alterada abaixo. Saiba mais na <a href="https://policies.google.com/privacy?hl=pt-BR" target="_blank" rel="noopener noreferrer">Política de Privacidade do Google</a>.</p>
+        <p class="ads-consent-status" id="ads-consent-status" role="status"></p>
+        <div class="ads-choices">
+          <button class="ads-choice" type="button" data-ads-consent="denied">Recusar</button>
+          <button class="ads-choice" type="button" data-ads-consent="granted">Permitir</button>
+        </div>
+      </section>
+      <p>Ao acessar WhatsApp, e-mail ou Instagram, você será direcionado a serviços de terceiros, sujeitos às respectivas políticas de privacidade. Compartilhe informações e documentos pessoais apenas nos canais de atendimento apropriados.</p>
+      <p>As informações encaminhadas no atendimento são utilizadas para compreender a solicitação e, quando houver contratação, conduzir o trabalho jurídico.</p>
+      <p>O serviço de hospedagem poderá processar registros técnicos necessários ao funcionamento do site.</p>
+      <p>Para questões relacionadas às informações compartilhadas no atendimento, escreva para <a href="mailto:advallayannamendes@gmail.com">advallayannamendes@gmail.com</a>.</p>
+    </div>
+  </dialog>
   <script>
 (() => {
   'use strict';
@@ -704,6 +766,7 @@ dialog a { overflow-wrap: anywhere; }
   let scrollFrame;
   let navigationFrame = null;
   let userNavigated = false;
+  let privacyTrigger = privacyOpen;
 
   root.classList.add('js');
   root.dataset.scrolling = 'false';
@@ -858,16 +921,20 @@ dialog a { overflow-wrap: anywhere; }
   window.addEventListener('load', alignInitialHash, {once: true});
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(alignInitialHash);
 
-  privacyOpen.addEventListener('click', () => {
-    setMenu(false);
-    if (typeof privacy.showModal === 'function') privacy.showModal();
-    else privacy.setAttribute('open', '');
-    syncFloatContact();
-  });
+  for (const button of [privacyOpen, document.getElementById('ads-privacy-open')]) {
+    button.addEventListener('click', () => {
+      privacyTrigger = button;
+      setMenu(false);
+      if (typeof privacy.showModal === 'function') privacy.showModal();
+      else privacy.setAttribute('open', '');
+      syncFloatContact();
+    });
+  }
   function closePrivacy() {
     if (typeof privacy.close === 'function') privacy.close();
     else privacy.removeAttribute('open');
-    privacyOpen.focus({preventScroll: true});
+    const returnFocus = privacyTrigger.closest('[hidden]') ? privacyOpen : privacyTrigger;
+    returnFocus.focus({preventScroll: true});
     syncFloatContact();
   }
   document.getElementById('privacy-close').addEventListener('click', closePrivacy);
@@ -893,6 +960,80 @@ dialog a { overflow-wrap: anywhere; }
   window.addEventListener('resize', syncFloatContact, {passive: true});
   syncFloatContact();
   setCurrentLink();
+
+  const adsConversion = 'AW-18588583541/xceECLjP9rwdEPWM3Z9F';
+  const adsTagId = adsConversion.split('/')[0];
+  const adsConsentKey = 'allayanna-ads-consent';
+  const adsConsentPanel = document.getElementById('ads-consent');
+  const adsConsentStatus = document.getElementById('ads-consent-status');
+  const adsConsentDenied = {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied',
+  };
+  let adsConsent = null;
+
+  function startAdsMeasurement() {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function gtag() { window.dataLayer.push(arguments); };
+    window.gtag('consent', 'default', adsConsentDenied);
+    window.gtag('consent', 'update', {...adsConsentDenied, ad_storage: 'granted', ad_user_data: 'granted'});
+    window.gtag('js', new Date());
+    window.gtag('config', adsTagId, {allow_ad_personalization_signals: false, send_page_view: false});
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + adsTagId;
+    document.head.append(script);
+  }
+
+  function applyAdsConsent(choice) {
+    const wasAllowed = adsConsent === 'granted';
+    adsConsent = choice === 'granted' || choice === 'denied' ? choice : null;
+    adsConsentPanel.hidden = adsConsent !== null;
+    adsConsentStatus.textContent = {
+      granted: 'Medição autorizada neste navegador.',
+      denied: 'Medição desativada neste navegador.',
+    }[adsConsent] || 'Escolha se deseja autorizar a medição.';
+
+    if (!wasAllowed && adsConsent === 'granted') startAdsMeasurement();
+    if (wasAllowed && adsConsent !== 'granted') {
+      window.gtag('consent', 'update', adsConsentDenied);
+      for (const cookie of document.cookie.split(';')) {
+        const name = cookie.trim().split('=', 1)[0];
+        if (!name.startsWith('_gcl_')) continue;
+        const expired = name + '=; Max-Age=0; Path=/';
+        document.cookie = expired;
+        document.cookie = expired + '; Domain=' + window.location.hostname;
+      }
+      // Reload to remove the tag that was authorized on this page.
+      window.location.reload();
+    }
+  }
+
+  function readAdsConsent() {
+    try { return window.localStorage.getItem(adsConsentKey); }
+    catch { return null; }
+  }
+  for (const button of document.querySelectorAll('[data-ads-consent]')) {
+    button.addEventListener('click', () => {
+      const choice = button.dataset.adsConsent;
+      try { window.localStorage.setItem(adsConsentKey, choice); }
+      catch { /* The choice still applies on the current page. */ }
+      applyAdsConsent(choice);
+    });
+  }
+  window.addEventListener('storage', event => {
+    if (event.key === adsConsentKey || event.key === null) applyAdsConsent(readAdsConsent());
+  });
+  document.addEventListener('click', event => {
+    if (adsConsent !== 'granted' || event.defaultPrevented || !(event.target instanceof Element)) return;
+    if (event.target.closest('a[href^="https://wa.me/"]')) {
+      window.gtag('event', 'conversion', {send_to: adsConversion});
+    }
+  });
+  applyAdsConsent(readAdsConsent());
 })();
 
 </script>
