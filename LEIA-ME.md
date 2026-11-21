@@ -1,6 +1,6 @@
 # Allayanna Mendes · Site institucional
 
-Versão 2026.11.20-r6 · 20 de novembro de 2026.
+Versão 2026.11.21-r7 · 21 de novembro de 2026.
 
 ## Atualizar o site que já está publicado
 
@@ -17,7 +17,7 @@ O `index.html` contém a logo, a imagem de abertura, o retrato, as fontes, a nav
 | `allayanna-mendes-compartilhamento.jpg` | Imagem para a prévia do link em aplicativos que leem Open Graph. |
 | `404.html` | Página para endereços inválidos, com links para o início e o contato. |
 
-O endereço de publicação é [labuxa.github.io/allayannamendes](https://labuxa.github.io/allayannamendes/).
+O endereço principal é [allayannamendes.com.br](https://allayannamendes.com.br/). Para ativá-lo, use `allayannamendes.com.br` em **Settings → Pages → Custom domain** no GitHub. O GitHub Pages cria o arquivo `CNAME` ao salvar o domínio em uma publicação a partir de uma branch. Depois de configurar o DNS, aguarde a confirmação do GitHub Pages e ative **Enforce HTTPS**.
 
 A publicação dos arquivos revisados depende de uma conta com permissão de gravação no repositório.
 
